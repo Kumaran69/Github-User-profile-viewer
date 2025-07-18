@@ -38,7 +38,7 @@ function Header({ isAuthenticated, onLogout }) {
       <Link to="/login" className={location.pathname === '/login' ? 'active' : ''}>Login</Link>
       <Link to="/" className={location.pathname === '/' ? 'active' : ''}>Home</Link>
       {isAuthenticated && (
-        <button onClick={onLogout} className="logout-btn">Logout</button>
+        <button onClick={handleLogout} className="logout-btn">Logout</button>
       )}
     </nav>
   );
