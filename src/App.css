@@ -1,0 +1,245 @@
+/* ===== Global Styles ===== */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #fdfbfb, #ebedee);
+  color: #333;
+  animation: fadeIn 1.2s ease-in;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* App Container */
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+/* ===== Navigation ===== */
+nav {
+  width: 100%;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  padding: 1em;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  animation: fadeIn 1.5s ease-in;
+}
+
+nav a {
+  color: white;
+  margin: 8px 15px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #ffd166;
+}
+
+/* ===== Forms ===== */
+form,
+.search {
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  border-color: #7e57c2;
+  box-shadow: 0 0 5px rgba(126, 87, 194, 0.3);
+  outline: none;
+}
+
+/* ===== Buttons ===== */
+button {
+  padding: 12px 20px;
+  background: linear-gradient(to right, #43e97b, #38f9d7);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: fadeIn 1.3s ease;
+}
+
+button:hover {
+  background: linear-gradient(to right, #32d185, #20e3b2);
+  transform: scale(1.03);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== Error Message ===== */
+.error {
+  color: #e74c3c;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+  animation: fadeIn 0.8s ease-in;
+}
+
+/* ===== Profile Card ===== */
+.profile {
+  max-width: 500px;
+  width: 100%;
+  margin: 30px auto;
+  padding: 25px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  animation: fadeIn 1s ease;
+}
+
+.profile img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 16px;
+  border: 3px solid #a29bfe;
+  transition: transform 0.3s ease;
+}
+
+.profile img:hover {
+  transform: scale(1.05);
+}
+
+.profile h2 {
+  margin: 10px 0;
+  font-size: 24px;
+  color: #2d3436;
+}
+
+.profile p {
+  margin: 5px 0;
+  font-size: 16px;
+  color: #636e72;
+}
+
+.profile a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #00b894;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.profile a:hover {
+  color: #00cec9;
+}
+
+/* ===== Search Box ===== */
+.home-container {
+  max-width: 600px;
+  margin: auto;
+  padding: 30px 20px;
+}
+
+.search-box {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.search-box input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  transition: border 0.3s ease;
+}
+
+.search-box input[type="text"]:focus {
+  border-color: #7e57c2;
+}
+
+.search-box button {
+  padding: 10px 16px;
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.search-box button:hover {
+  background: linear-gradient(to right, #0072ff, #00c6ff);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+  .App {
+    padding: 20px 10px;
+  }
+
+  form,
+  .search,
+  .profile {
+    padding: 15px;
+  }
+
+  .profile img {
+    width: 100px;
+    height: 100px;
+  }
+
+  nav {
+    flex-direction: column;
+  }
+
+  nav a {
+    margin: 8px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  button,
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    font-size: 14px;
+  }
+
+  .profile h2 {
+    font-size: 20px;
+  }
+
+  .profile p {
+    font-size: 14px;
+  }
+}
