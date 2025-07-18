@@ -1,22 +1,26 @@
 // App.js
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link, Navigate, useLocation } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link,
+  Navigate,
+  useLocation,
+  useNavigate,
+} from 'react-router-dom';
+
 import Home from './pages/Home';
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
 import './App.css';
 
 function App() {
-  const isAuthenticated = localStorage.getItem('isAuthenticated');
-
-  const handleLogout = () => {
-    localStorage.removeItem('isAuthenticated');
-    window.location.href = '/login';
-  };
+  const isAuthenticated = localStorage.getItem('isAuthenticated') === 'true';
 
   return (
     <Router>
-      <Header isAuthenticated={isAuthenticated} onLogout={handleLogout} />
+      <Header isAuthenticated={isAuthenticated} />
       <div className="App">
         <Routes>
           <Route path="/" element={isAuthenticated ? <Home /> : <Navigate to="/login" />} />
@@ -29,8 +33,15 @@ function App() {
   );
 }
 
-function Header({ isAuthenticated, onLogout }) {
+// ✅ Header now uses useNavigate for logout
+function Header({ isAuthenticated }) {
   const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem('isAuthenticated');
+    navigate('/login'); // more reliable for SPA routing
+  };
 
   return (
     <nav className="navbar">
